@@ -1,0 +1,41 @@
+FINAL AUDIT SUMMARY (Bangla)
+==========================
+
+Public UI files verified unchanged:
+- index.html
+- style.css
+- script.js
+
+Backend files improved:
+- includes/bootstrap.php
+- includes/product-catalog.php
+- checkout.php
+- send-message.php
+- api/comment-submit.php
+- config/app.php
+- database/schema.sql
+- database/upgrade_v2.sql
+
+Key findings:
+- Manual payment system exists and is operational
+- Database architecture is usable for small/medium scale content selling workflow
+- Important hardening was still needed in checkout anti-spam, duplicate order protection, deterministic catalog query, and DB-failure backup logging
+- Those hardening steps are now included in this revised package
+
+Deployment order:
+1. Upload files to hosting
+2. Create MySQL database and user
+3. Update config/database.php
+4. Import database/schema.sql
+5. Run setup-database.php
+6. Login admin/login.php
+7. Delete setup-database.php after successful setup
+
+Payment flow:
+- bKash / Nagad / Rocket -> 01717618480
+- Order WhatsApp -> 8801303329946
+- Delivery -> Email or WhatsApp from admin side
+
+Note:
+- If your hosting previously had the older schema, apply database/upgrade_v2.sql
+- messages/ folder is protected and now stores backup JSONL if DB insert fails

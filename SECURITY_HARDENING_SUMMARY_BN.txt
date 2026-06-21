@@ -1,0 +1,41 @@
+EduPPT BD - Security Hardening Summary (Bangla)
+================================================
+
+এই package-এ public website-এর design/layout/content পরিবর্তন না করে backend/database/security layer শক্ত করা হয়েছে।
+
+মূল hardening:
+1. Admin login page থেকে default credentials সরানো হয়েছে
+2. Secure setup form যোগ করা হয়েছে, যেখানে admin email/password আপনি নিজে সেট করবেন
+3. Setup lock file যোগ করা হয়েছে যাতে setup script বারবার run না হয়
+4. Admin login brute-force protection যোগ করা হয়েছে
+5. Session cookie hardening করা হয়েছে (HttpOnly, SameSite, Secure when HTTPS)
+6. File upload validation শক্ত করা হয়েছে:
+   - extension check
+   - MIME/content type check
+   - file size limit
+   - SHA-256 checksum
+7. Comment spam protection যোগ করা হয়েছে:
+   - rate limit
+   - duplicate comment suppression
+8. Contact form spam protection যোগ করা হয়েছে:
+   - rate limit
+   - duplicate message suppression
+9. Customer normalization উন্নত করা হয়েছে:
+   - normalized phone field
+   - upsert logic
+10. Comment table-এ customer link ও moderation fields যোগ করা হয়েছে
+11. Orders table-এ payment tracking fields যোগ করা হয়েছে
+12. Content versioning table যোগ করা হয়েছে
+13. Admin audit log table যোগ করা হয়েছে
+14. CSV fallback backup-এ unnecessary IP storage বাদ দেওয়া হয়েছে
+15. Security headers যোগ করা হয়েছে PHP-driven endpoints-এ
+
+Deployment notes:
+- প্রথমে config/database.php আপডেট করুন
+- তারপর setup-database.php চালিয়ে নিজের admin account তৈরি করুন
+- setup শেষ হলে setup-database.php delete করুন
+- SSL active থাকলে session আরও secure হবে
+
+Important:
+- main website index.html / style.css / script.js untouched রাখা হয়েছে
+- visual frontend layout পরিবর্তন করা হয়নি

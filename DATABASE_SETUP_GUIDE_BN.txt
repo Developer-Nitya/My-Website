@@ -1,0 +1,114 @@
+EduPPT BD - Professional Database & Admin Setup Guide
+=====================================================
+
+এই package-এ আপনার original website design/layout অপরিবর্তিত রাখা হয়েছে।
+Frontend একই আছে, কিন্তু backend-এ MySQL database, admin panel, content upload system, message storage, comment storage, quiz-ready schema যোগ করা হয়েছে।
+
+নতুন কী যোগ হয়েছে
+-----------------
+1) config/database.php
+   - MySQL connection credentials বসাতে হবে
+
+2) database/schema.sql
+   - সম্পূর্ণ professional database schema
+
+3) setup-database.php
+   - প্রথমবার run করলে table create করবে
+   - default admin account তৈরি করবে
+   - পুরোনো demo products database-এ seed করবে
+
+4) admin/login.php
+   - admin panel login page
+
+5) admin/dashboard.php
+   - PPT/document/quiz metadata upload
+   - message monitoring
+   - comment approval
+   - content list
+
+6) api/products.php
+   - website-এর product section এখন database থেকে data নিতে পারবে
+   - database unavailable হলে পুরোনো hardcoded data fallback হিসেবে দেখাবে
+
+7) send-message.php
+   - contact message এখন email + database + CSV backup তিন জায়গায় handle করবে
+
+Hosting Upload Steps
+--------------------
+1. cPanel-এ একটি নতুন MySQL database তৈরি করুন
+2. একটি MySQL user তৈরি করে সেই database-এর সাথে assign করুন
+3. এই package-এর config/database.php ফাইল খুলে credentials বসান:
+   - host
+   - port
+   - dbname
+   - username
+   - password
+
+4. পুরো package public_html-এ upload করুন
+5. browser-এ গিয়ে run করুন:
+   yourdomain.com/setup-database.php
+
+6. success message দেখলে setup-database.php ফাইল delete করে দিন
+7. browser-এ গিয়ে admin panel open করুন:
+   yourdomain.com/admin/login.php
+
+Default Admin Login
+-------------------
+Email: admin@edupptbd.local
+Password: ChangeMe@123
+
+খুব গুরুত্বপূর্ণ:
+- login করার পর সাথে সাথে password change system add করা উচিত
+- অন্তত config/app.php ফাইলে default admin email/password পরিবর্তন করুন setup run করার আগে
+
+Upload Rules
+------------
+Main file upload:
+- PPT
+- PPTX
+- PDF
+- DOC
+- DOCX
+- ZIP
+
+Thumbnail upload:
+- JPG
+- JPEG
+- PNG
+- WEBP
+
+Directory Notes
+---------------
+uploads/ppt/           => main PPT or main downloadable files
+uploads/documents/     => sample file / extra attachment
+uploads/thumbnails/    => thumbnail or preview image
+logs/app.log           => error log
+
+Current Website Integrity
+-------------------------
+- index.html-এর design/layout change করা হয়নি
+- style.css change করা হয়নি
+- existing product cards-এর visual structure change করা হয়নি
+- contact section UI change করা হয়নি
+- only backend linkage যোগ করা হয়েছে
+
+Production Recommendation
+-------------------------
+1) PHP 8.1 বা newer ব্যবহার করুন
+2) MySQL 5.7+/MariaDB 10.4+ হলে ভালো
+3) SSL certificate চালু রাখুন
+4) SPF, DKIM, SMTP configure করলে email delivery ভালো হবে
+5) setup-database.php run করার পর delete করুন
+
+Future Expansion Ready
+----------------------
+এই schema দিয়ে আপনি পরে সহজেই:
+- paid order management
+- customer portal
+- downloadable purchased files
+- quiz delivery
+- testimonial/comment moderation
+- invoice system
+- OTP login
+- REST API expansion
+যোগ করতে পারবেন।

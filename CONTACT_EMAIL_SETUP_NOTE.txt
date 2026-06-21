@@ -1,0 +1,22 @@
+EduPPT BD Contact Email Setup Note
+
+Contact form destination:
+- urdokan@gmail.com
+
+Files involved:
+- index.html
+- script.js
+- send-message.php
+- messages/contact-requests.csv will be created automatically after submissions.
+
+Important hosting note:
+- This contact form now uses same-domain PHP mail().
+- Upload all files to a PHP-supported live hosting/cPanel server.
+- If the hosting provider disables PHP mail(), the form will still save submitted messages in messages/contact-requests.csv, but the hosting provider must enable PHP mail or SMTP for actual email delivery to Gmail.
+- For best Gmail inbox delivery, make sure the domain has SPF/DKIM configured in hosting/DNS.
+
+No other website section was changed.
+
+Security:
+- The /messages folder is included with .htaccess protection for Apache/cPanel hosting.
+- contact-requests.csv is only a fallback backup if mail() fails.

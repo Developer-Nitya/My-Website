@@ -1,0 +1,30 @@
+Admin panel-এ নতুন দুটি admin-only module যোগ করা হয়েছে:
+
+1. order-history.php
+- order status history page
+- order ref / TxID / customer / content search
+- status type filter
+- pagination
+- specific order focus mode
+
+2. interactions.php
+- message search/filter/pagination
+- comment search/filter/pagination
+- message status update: new / in_progress / closed
+- comment status update: pending / approved / rejected
+
+অতিরিক্ত backend উন্নয়ন:
+- নতুন order create হলে initial status log auto-save হবে
+- fresh schema-তে history/filter query-এর জন্য extra index যোগ করা হয়েছে
+- existing install হলে upgrade_v5.sql চালান
+
+Upgrade steps:
+1. hosting-এ নতুন ফাইলগুলো upload করুন
+2. existing database হলে database/upgrade_v5.sql চালান
+3. admin panel-এ login করে:
+   - Dashboard
+   - Order History
+   - Message/Comment Manager
+   pageগুলো test করুন
+
+Public website-এর কোনো design/layout change করা হয়নি।

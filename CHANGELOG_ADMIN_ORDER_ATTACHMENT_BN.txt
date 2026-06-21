@@ -1,0 +1,12 @@
+Changelog
+
+v4 backend/admin upgrade:
+- Added order_delivery_files table
+- Added deliver.php secure token download endpoint
+- Added uploads/deliveries storage
+- Added admin order delivery attachment upload
+- Added shareable delivery links for clients
+- Added delivery attachment remove action
+- Added order search/filter/pagination in admin dashboard
+- Added content search/filter/pagination in content manager
+- Public website design unchanged

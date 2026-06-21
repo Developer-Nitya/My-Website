@@ -1,0 +1,27 @@
+CHANGELOG: Admin History + Interaction Manager
+
+নতুন ফাইল:
+- admin/order-history.php
+- admin/interactions.php
+- database/upgrade_v5.sql
+
+পরিবর্তিত ফাইল:
+- admin/dashboard.php
+- checkout.php
+- includes/order-management.php
+- database/schema.sql
+
+নতুন feature:
+- order status history page
+- order history search / filter / pagination
+- focused order history view
+- contact message search / filter / pagination
+- comment search / filter / pagination
+- message status workflow (new / in_progress / closed)
+- comment moderation workflow (approve / reject / reset)
+- new order initial status auto logging
+
+Public site unchanged:
+- index.html unchanged
+- style.css unchanged
+- script.js unchanged

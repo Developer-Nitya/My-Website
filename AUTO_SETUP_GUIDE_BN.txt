@@ -1,0 +1,28 @@
+EduPPT BD - Hosting Setup Guide (BN)
+
+যা আমি প্রস্তুত করে দিয়েছি:
+1) database/schema.sql আলাদা import করা বাধ্যতামূলক নেই
+2) config/database.php ম্যানুয়ালি edit করাও বাধ্যতামূলক নেই
+3) setup-database.php এখন DB config + schema import + admin create একসাথে করবে
+4) setup শেষে lock file তৈরি হবে, তাই script পুনরায় চালানো যাবে না
+5) SSL certificate hosting-এ active থাকলে HTTPS redirect স্বয়ংক্রিয়ভাবে কাজ করবে
+
+আপনার hosting-এ যা করতে হবে:
+1) zip extract করে public_html বা target directory-তে upload করুন
+2) cPanel/MySQL Database Wizard দিয়ে একটি MySQL database ও user তৈরি করুন
+3) domain/subdomain-এ SSL certificate enable করুন
+4) browser-এ https://your-domain.com/setup-database.php খুলুন
+5) database host/name/user/password দিন
+6) admin email/password দিন
+7) Run Secure Setup চাপুন
+8) success হলে admin/login.php দিয়ে login করুন
+9) setup-database.php delete করতে পারলে delete করুন
+
+যা আমি আপনার হয়ে hosting ছাড়া করতে পারি না:
+- আপনার আসল hosting MySQL database name/user/password জেনে বসানো
+- cPanel/hosting panel-এ SSL certificate activate করা
+- server-level mail/WhatsApp delivery configuration
+
+নিরাপত্তা নোট:
+- placeholder database.php রাখা হয়েছে যাতে local zip-এ কোনো আসল credential expose না হয়
+- public website design/layout/content unchanged রাখা হয়েছে

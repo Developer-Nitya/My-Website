@@ -1,0 +1,16 @@
+Upcoming slider compact + image-based premium update
+
+Changed files:
+- index.html
+- style.css
+
+What changed:
+- Reduced the desktop slider box footprint so the left-side subject icons and labels stay more visible
+- Added image-based premium slide previews using existing project assets
+- Kept autoplay / arrows / dots / keyboard / touch behavior unchanged
+- Preserved all existing database, backend, PHP, config and portfolio files
+- Kept mobile/tablet responsive behavior with targeted slider-only overrides
+
+Database:
+- No database file changed
+- No config or backend logic changed

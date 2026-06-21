@@ -1,0 +1,22 @@
+Admin Content Manager Feature Changelog (Bangla)
+
+নতুন / পরিবর্তিত ফাইলসমূহ:
+- admin/content-manager.php
+- admin/dashboard.php
+- includes/content-management.php
+- includes/product-catalog.php
+- download.php
+- api/comment-submit.php
+- database/schema.sql
+- database/upgrade_v3.sql
+- ADMIN_CONTENT_MANAGER_UPGRADE_BN.txt
+
+মূল ফিচার:
+1. Existing content edit
+2. Main/sample/thumbnail replace
+3. Recycle bin based delete
+4. Deleted content restore
+5. Version snapshot save
+6. Previous version restore
+7. Active file tracking for safe rollback
+8. Public catalog/download query active-version-aware

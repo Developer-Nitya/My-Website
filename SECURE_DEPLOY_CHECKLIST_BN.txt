@@ -1,0 +1,16 @@
+EduPPT BD - Secure Deployment Checklist
+=======================================
+
+1. ZIP upload করুন
+2. Extract করুন
+3. MySQL database ও user তৈরি করুন
+4. config/database.php-এ credentials বসান
+5. https://yourdomain.com/setup-database.php চালান
+6. নিজের admin name/email/password দিন
+7. setup সফল হলে admin/login.php দিয়ে login test করুন
+8. setup-database.php delete করুন
+9. contact form test করুন
+10. admin upload test করুন
+11. comment submit test করুন
+12. SSL active করুন
+13. final backup নিন

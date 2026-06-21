@@ -1,0 +1,18 @@
+
+-- V6 AUTOMATION UPGRADE
+CREATE TABLE IF NOT EXISTS delivery_tokens (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  order_id VARCHAR(100),
+  token VARCHAR(255),
+  expires_at DATETIME,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS email_queue (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  to_email VARCHAR(255),
+  subject VARCHAR(255),
+  body TEXT,
+  status ENUM('pending','sent') DEFAULT 'pending',
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

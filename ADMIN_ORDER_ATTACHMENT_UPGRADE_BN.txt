@@ -1,0 +1,23 @@
+Admin panel upgrade summary (Bangla)
+
+নতুন যা যোগ হয়েছে:
+1. Admin dashboard order list-এ search
+2. Order status / payment status / delivery status filter
+3. Pagination
+4. Order delivery attachment upload
+5. প্রতিটি attachment-এর shareable delivery link
+6. Attachment remove option
+7. Content Manager-এ content search/filter/pagination
+
+Deploy:
+- fresh install: database/schema.sql import করুন
+- existing install: upgrade_v4.sql চালান
+- config/database.php আপডেট করুন
+- uploads/deliveries folder already included আছে
+
+ব্যবহার:
+- Admin Dashboard > Order Management
+- Delivery Attachment Upload থেকে file দিন
+- Save Order Update চাপুন
+- uploaded file-এর নিচে Share Link তৈরি হবে
+- সেই link WhatsApp / Email-এ client-কে পাঠাতে পারবেন

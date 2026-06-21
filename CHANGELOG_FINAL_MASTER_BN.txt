@@ -1,0 +1,22 @@
+FINAL MASTER CHANGELOG (Bangla)
+
+এই final package-এ আগের সব backend/admin improvements consolidate করা হয়েছে।
+
+সংযুক্ত feature summary:
+- manual payment workflow
+- hardened checkout submission
+- secure contact/comment submission
+- content manager with edit/delete/version restore
+- order delivery attachment upload
+- order search/filter/pagination
+- message/comment search/filter/pagination
+- order status history page
+- printable order slip page
+- admin audit log page
+- hosting upload limit helper (.user.ini)
+
+যা পরিবর্তন করা হয়নি:
+- index.html
+- style.css
+- script.js
+- public website design/layout/content presentation

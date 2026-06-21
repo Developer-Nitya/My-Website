@@ -1,0 +1,24 @@
+Admin Content Manager Upgrade Note (Bangla)
+
+নতুন যেগুলো যোগ হয়েছে:
+- admin/content-manager.php
+- content edit
+- recycle bin based delete
+- deleted content restore
+- version snapshot restore
+- file replacement with active version tracking
+
+Fresh install:
+1. config/database.php সেট করুন
+2. database/schema.sql import করুন
+3. setup-database.php চালান
+
+Existing database upgrade:
+1. আগে যদি schema import করা থাকে, database/upgrade_v2.sql চালান (যদি আগে চালানো না থাকে)
+2. তারপর database/upgrade_v3.sql চালান
+3. এরপর admin/content-manager.php ব্যবহার করুন
+
+গুরুত্বপূর্ণ:
+- public website design/layout পরিবর্তন করা হয়নি
+- deleted content public catalog-এ আর দেখা যাবে না
+- restore করলে আগের saved version অনুযায়ী metadata ও active files ফিরে আসবে

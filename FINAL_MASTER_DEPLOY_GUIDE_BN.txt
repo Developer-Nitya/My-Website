@@ -1,0 +1,36 @@
+FINAL MASTER DEPLOY GUIDE (Bangla)
+
+এই package-এ public website-এর visible design/layout পরিবর্তন করা হয়নি।
+index.html, style.css, script.js unchanged রাখা হয়েছে।
+
+কি কি আছে:
+- PHP + MySQL backend
+- content upload / edit / delete / version restore
+- order management + payment tracking
+- delivery attachment upload + secure share link
+- message/comment manager + search/filter/pagination
+- order history page
+- printable order slip page
+- admin audit logs page
+
+হোস্টিং-এ deploy করার ধাপ:
+1) ZIP extract করে সব file public_html বা আপনার target folder-এ upload করুন
+2) config/database.php এ hosting-এর আসল DB name / user / password দিন
+3) fresh install হলে database/schema.sql import করুন
+4) existing পুরোনো install হলে প্রয়োজনমতো upgrade_v2.sql → upgrade_v5.sql sequentially run করুন
+5) root folder-এর .user.ini file রাখা থাকলে বড় file upload smoother হবে
+6) setup-database.php run করে admin account create করুন
+7) setup শেষে setup-database.php delete করুন
+8) SSL active হলে .htaccess অনুযায়ী HTTPS redirect কাজ করবে
+
+গুরুত্বপূর্ণ:
+- uploads/, logs/, config/, database/ folder protection already added
+- delivery file direct path blocked; শুধুমাত্র deliver.php token link দিয়ে download হবে
+- public homepage unchanged
+
+নতুন admin page:
+- admin/content-manager.php
+- admin/interactions.php
+- admin/order-history.php
+- admin/order-print.php
+- admin/audit-logs.php

@@ -1,0 +1,15 @@
+HOSTING UPLOAD LIMIT NOTE (Bangla)
+
+এই package-এ root level .user.ini যোগ করা হয়েছে যাতে shared hosting-এ বড় PPT/PDF/ZIP upload তুলনামূলক smooth হয়।
+
+প্রধান settings:
+- upload_max_filesize = 96M
+- post_max_size = 108M
+- memory_limit = 256M
+- max_execution_time = 120
+
+যদি hosting provider .user.ini support না করে:
+- cPanel PHP Options / MultiPHP INI Editor থেকে একই values set করুন
+- অথবা hosting support-কে upload_max_filesize / post_max_size বাড়াতে বলুন
+
+বিশেষ করে content upload এবং delivery attachment upload এর জন্য এটি দরকারি।

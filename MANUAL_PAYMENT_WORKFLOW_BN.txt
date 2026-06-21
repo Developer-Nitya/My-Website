@@ -1,0 +1,30 @@
+Manual Payment Workflow (Revised)
+=================================
+
+Client side:
+1. catalog.php থেকে content select করবে
+2. checkout.php page-এ যাবে
+3. bKash / Nagad / Rocket নম্বরে Send Money করবে
+4. TxID/reference লিখে form submit করবে
+5. order database-এ save হবে
+6. WhatsApp prefilled order message auto-open হবে
+
+Admin side:
+1. admin/login.php এ login
+2. admin/dashboard.php এ order list দেখুন
+3. TxID মিলিয়ে payment_status = paid করুন
+4. delivery_method/email/whatsapp contact যাচাই করুন
+5. content client-এর email বা WhatsApp-এ পাঠান
+6. delivery_status = sent করুন
+7. delivery_note / admin_notes লিখে রাখুন
+
+Safety improvements now included:
+- duplicate order protection
+- rate limiting
+- same-origin validation
+- database unavailable হলে protected backup log
+
+Important:
+- payment number: 01717618480
+- methods: bKash / Nagad / Rocket
+- order WhatsApp: 8801303329946
